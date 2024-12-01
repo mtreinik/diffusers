@@ -7,7 +7,7 @@ if [ -z "$MODEL_NAME" ] || [ ! -d "$OUTPUT_DIR" ] || [ -z "$INSTANCE_DATA_DIR" ]
 fi
 
 
-accelerate launch train_multi_subject_dreambooth.py \
+accelerate launch train_dreambooth_sd3.py \
   --pretrained_model_name_or_path="$MODEL_NAME"  \
   --instance_data_dir="$INSTANCE_DATA_DIR" \
   --output_dir="$OUTPUT_DIR" \
