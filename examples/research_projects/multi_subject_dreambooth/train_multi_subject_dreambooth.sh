@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -z "$MODEL_NAME" ] || [ ! -d "$OUTPUT_DIR" ] || [ ! -d "$INSTANCE_DATA_DIR" ]  || [ -z "$INSTANCE_PROMPT" ] || [ ! -d "$CLASS_DIR" ] || [ -z "$CLASS_PROMPT" ]; then
+if [ -z "$MODEL_NAME" ] || [ ! -d "$OUTPUT_DIR" ] || [ -z "$INSTANCE_DATA_DIR" ]  || [ -z "$INSTANCE_PROMPT" ] || [ -z "$CLASS_DIR" ] || [ -z "$CLASS_PROMPT" ]; then
   echo Please define the following environment variables correctly: \nMODEL_NAME, OUTPUT_DIR, INSTANCE_DATA_DIR, INSTANCE_PROMPT, CLASS_DIR, CLASS_PROMPT 
   exit 1
 fi
