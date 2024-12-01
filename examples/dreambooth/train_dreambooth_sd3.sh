@@ -8,7 +8,7 @@ fi
 
 
 accelerate launch train_multi_subject_dreambooth.py \
-  --pretrained_model_name_or_path=$MODEL_NAME  \
+  --pretrained_model_name_or_path="$MODEL_NAME"  \
   --instance_data_dir="$INSTANCE_DATA_DIR" \
   --output_dir="$OUTPUT_DIR" \
   --mixed_precision="fp16" \
@@ -20,7 +20,7 @@ accelerate launch train_multi_subject_dreambooth.py \
   --report_to="wandb" \
   --lr_scheduler="constant" \
   --lr_warmup_steps=0 \
-  --max_train_steps=500
+  --max_train_steps=500 \
   --validation_prompt="$VALIDATION_PROMPT" \
   --validation_epochs=25 \
   --seed="0" \
