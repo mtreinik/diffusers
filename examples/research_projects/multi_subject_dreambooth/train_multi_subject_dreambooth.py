@@ -35,7 +35,7 @@ from diffusers import (
     DDPMScheduler,
     DiffusionPipeline,
     DPMSolverMultistepScheduler,
-    UNet2DConditionModel,
+    SD3Transformer2DModel,
 )
 from diffusers.optimization import get_scheduler
 from diffusers.utils import check_min_version, is_wandb_available
@@ -901,7 +901,7 @@ def main(args):
         args.pretrained_model_name_or_path, subfolder="text_encoder", revision=args.revision
     )
     vae = AutoencoderKL.from_pretrained(args.pretrained_model_name_or_path, subfolder="vae", revision=args.revision)
-    unet = UNet2DConditionModel.from_pretrained(
+    unet = SD3Transformer2DModel.from_pretrained(
         args.pretrained_model_name_or_path, subfolder="unet", revision=args.revision
     )
 
