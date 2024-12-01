@@ -902,7 +902,7 @@ def main(args):
     )
     vae = AutoencoderKL.from_pretrained(args.pretrained_model_name_or_path, subfolder="vae", revision=args.revision)
     unet = SD3Transformer2DModel.from_pretrained(
-        args.pretrained_model_name_or_path, subfolder="unet", revision=args.revision
+        args.pretrained_model_name_or_path, subfolder="transformer", revision=args.revision
     )
 
     vae.requires_grad_(False)
