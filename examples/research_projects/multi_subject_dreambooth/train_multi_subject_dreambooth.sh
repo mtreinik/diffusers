@@ -15,7 +15,7 @@ accelerate launch train_multi_subject_dreambooth.py \
   --prior_loss_weight=1.0 \
   --class_data_dir="$CLASS_DIR" \
   --class_prompt="$CLASS_PROMPT"\
-  --num_class_images=10 \
+  --num_class_images=200 \
   --resolution=512 \
   --train_batch_size=1 \
   --gradient_accumulation_steps=1 \
