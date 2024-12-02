@@ -25,9 +25,9 @@ accelerate launch train_dreambooth_lora_sd3.py \
   --report_to="wandb" \
   --lr_scheduler="constant" \
   --lr_warmup_steps=0 \
-  --max_train_steps=500 \
+  --max_train_steps=1000 \
   --validation_prompt="$VALIDATION_PROMPT" \
-  --validation_epochs=25 \
+  --validation_epochs=100 \
   --seed="0" \
   --mixed_precision="fp16" \
   --use_8bit_adam \
