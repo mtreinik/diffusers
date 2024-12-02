@@ -16,7 +16,7 @@ accelerate launch train_dreambooth_sd3.py \
   --resolution=512 \
   --train_batch_size=1 \
   --gradient_accumulation_steps=4 \
-  --learning_rate=4e-4 \
+  --learning_rate=5e-5 \
   --report_to="wandb" \
   --lr_scheduler="constant" \
   --lr_warmup_steps=0 \
@@ -27,3 +27,8 @@ accelerate launch train_dreambooth_sd3.py \
   --class_data_dir="$CLASS_DIR" \
   --class_prompt="$CLASS_PROMPT"\
   --num_class_images=200 \
+
+  --push_to_hub
+
+#  --optimizer="AdamW" \
+#  --use_8bit_adam \
