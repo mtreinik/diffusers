@@ -1069,7 +1069,7 @@ def main(args):
             pipeline.to(accelerator.device)
 
             for example in tqdm(
-                sample_dataloader, desc="Generating class images", disable=not accelerator.is_local_main_process
+                sample_dataloader, desc="Generating class images", disable=not accelerator.is_local_main_process, ascii=True
             ):
                 images = pipeline(example["prompt"]).images
 
@@ -1526,6 +1526,7 @@ def main(args):
         desc="Steps",
         # Only show the progress bar once on each machine.
         disable=not accelerator.is_local_main_process,
+        ascii=True
     )
 
     def get_sigmas(timesteps, n_dim=4, dtype=torch.float32):
