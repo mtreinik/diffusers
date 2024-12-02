@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -z "$MODEL_NAME" ] || [ ! -d "$OUTPUT_DIR" ] || [ -z "$INSTANCE_DATA_DIR" ]  || [ -z "$INSTANCE_PROMPT" ] || [ -z "$CLASS_DIR" ] || [ -z "$CLASS_PROMPT" ] || [ -z "$VALIDATION_PROMPT" ]; then
+if [ -z "$MODEL_NAME" ] || [ ! -z "$OUTPUT_DIR" ] || [ -z "$INSTANCE_DATA_DIR" ]  || [ -z "$INSTANCE_PROMPT" ] || [ -z "$CLASS_DIR" ] || [ -z "$CLASS_PROMPT" ] || [ -z "$VALIDATION_PROMPT" ]; then
   echo Please define the following environment variables correctly:
   echo MODEL_NAME="$MODEL_NAME"
   echo OUTPUT_DIR="$OUTPUT_DIR"
@@ -29,6 +29,7 @@ accelerate launch train_dreambooth_sd3.py \
   --validation_prompt="$VALIDATION_PROMPT" \
   --validation_epochs=25 \
   --seed="0" \
+  --with_prior_preservation \
   --class_data_dir="$CLASS_DIR" \
   --class_prompt="$CLASS_PROMPT"\
   --num_class_images=200 \
