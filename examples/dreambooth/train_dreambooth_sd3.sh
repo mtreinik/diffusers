@@ -2,7 +2,13 @@
 
 if [ -z "$MODEL_NAME" ] || [ ! -d "$OUTPUT_DIR" ] || [ -z "$INSTANCE_DATA_DIR" ]  || [ -z "$INSTANCE_PROMPT" ] || [ -z "$CLASS_DIR" ] || [ -z "$CLASS_PROMPT" ] || [ -z "$VALIDATION_PROMPT" ]; then
   echo Please define the following environment variables correctly:
-  echo MODEL_NAME, OUTPUT_DIR, INSTANCE_DATA_DIR, INSTANCE_PROMPT, CLASS_DIR, CLASS_PROMPT, VALIDATION_PROMPT
+  echo MODEL_NAME="$MODEL_NAME"
+  echo OUTPUT_DIR="$OUTPUT_DIR"
+  echo INSTANCE_DATA_DIR="$INSTANCE_DATA_DIR"
+  echo INSTANCE_PROMPT="$INSTANCE_PROMPT"
+  echo CLASS_DIR="$CLASS_DIR"
+  echo CLASS_PROMPT="$CLASS_PROMPT"
+  echo VALIDATION_PROMPT="$VALIDATION_PROMPT"
   exit 1
 fi
 
