@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -z "$MODEL_NAME" ] || [ ! -z "$OUTPUT_DIR" ] || [ -z "$INSTANCE_DATA_DIR" ]  || [ -z "$INSTANCE_PROMPT" ] || [ -z "$CLASS_DIR" ] || [ -z "$CLASS_PROMPT" ] || [ -z "$VALIDATION_PROMPT" ]; then
+if [ -z "$MODEL_NAME" ] || [ -z "$OUTPUT_DIR" ] || [ -z "$INSTANCE_DATA_DIR" ]  || [ -z "$INSTANCE_PROMPT" ] || [ -z "$CLASS_DIR" ] || [ -z "$CLASS_PROMPT" ] || [ -z "$VALIDATION_PROMPT" ]; then
   echo Please define the following environment variables correctly:
   echo MODEL_NAME="$MODEL_NAME"
   echo OUTPUT_DIR="$OUTPUT_DIR"
