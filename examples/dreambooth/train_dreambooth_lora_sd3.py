@@ -1167,6 +1167,8 @@ def main(args):
                 exist_ok=True,
             ).repo_id
 
+    logger.info("Loading tokenizers..")
+
     # Load the tokenizers
     tokenizer_one = CLIPTokenizer.from_pretrained(
         args.pretrained_model_name_or_path,
@@ -1183,6 +1185,7 @@ def main(args):
         subfolder="tokenizer_3",
         revision=args.revision,
     )
+    logger.info("Tokenizers are loaded")
 
     # import correct text encoder classes
     text_encoder_cls_one = import_model_class_from_model_name_or_path(
