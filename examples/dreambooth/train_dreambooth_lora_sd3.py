@@ -1141,7 +1141,10 @@ def main(args):
             pipeline.to(accelerator.device)
 
             for example in tqdm(
-                sample_dataloader, desc="Generating class images", disable=not accelerator.is_local_main_process
+                sample_dataloader,
+                desc="Generating class images",
+                disable=not accelerator.is_local_main_process,
+                ascii=True
             ):
                 images = pipeline(example["prompt"]).images
 
@@ -1564,7 +1567,7 @@ def main(args):
     vae_config_scaling_factor = vae.config.scaling_factor
     if args.cache_latents:
         latents_cache = []
-        for batch in tqdm(train_dataloader, desc="Caching latents"):
+        for batch in tqdm(train_dataloader, desc="Caching latents", ascii=True):
             with torch.no_grad():
                 batch["pixel_values"] = batch["pixel_values"].to(
                     accelerator.device, non_blocking=True, dtype=weight_dtype
@@ -1672,6 +1675,7 @@ def main(args):
         desc="Steps",
         # Only show the progress bar once on each machine.
         disable=not accelerator.is_local_main_process,
+        ascii=True,
     )
 
     def get_sigmas(timesteps, n_dim=4, dtype=torch.float32):
