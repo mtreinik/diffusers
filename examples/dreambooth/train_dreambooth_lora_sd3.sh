@@ -1,14 +1,15 @@
 #!/bin/bash
 
+echo MODEL_NAME="$MODEL_NAME"
+echo OUTPUT_DIR="$OUTPUT_DIR"
+echo INSTANCE_DATA_DIR="$INSTANCE_DATA_DIR"
+echo INSTANCE_PROMPT="$INSTANCE_PROMPT"
+echo CLASS_DIR="$CLASS_DIR"
+echo CLASS_PROMPT="$CLASS_PROMPT"
+echo VALIDATION_PROMPT="$VALIDATION_PROMPT"
+
 if [ -z "$MODEL_NAME" ] || [ -z "$OUTPUT_DIR" ] || [ -z "$INSTANCE_DATA_DIR" ]  || [ -z "$INSTANCE_PROMPT" ] || [ -z "$CLASS_DIR" ] || [ -z "$CLASS_PROMPT" ] || [ -z "$VALIDATION_PROMPT" ]; then
-  echo Please define the following environment variables correctly:
-  echo MODEL_NAME="$MODEL_NAME"
-  echo OUTPUT_DIR="$OUTPUT_DIR"
-  echo INSTANCE_DATA_DIR="$INSTANCE_DATA_DIR"
-  echo INSTANCE_PROMPT="$INSTANCE_PROMPT"
-  echo CLASS_DIR="$CLASS_DIR"
-  echo CLASS_PROMPT="$CLASS_PROMPT"
-  echo VALIDATION_PROMPT="$VALIDATION_PROMPT"
+  echo Please define the above environment variables correctly.
   exit 1
 fi
 
@@ -32,6 +33,8 @@ accelerate launch train_dreambooth_lora_sd3.py \
   --mixed_precision="fp16" \
   --use_8bit_adam \
   --push_to_hub
+
+# TODO try LoRa with 16 bit precision
 
 #  --with_prior_preservation \
 #  --class_data_dir="$CLASS_DIR" \
