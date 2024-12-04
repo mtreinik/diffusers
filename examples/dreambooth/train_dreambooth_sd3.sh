@@ -26,7 +26,7 @@ accelerate launch train_dreambooth_sd3.py \
   --report_to="wandb" \
   --lr_scheduler="constant" \
   --lr_warmup_steps=0 \
-  --max_train_steps=500 \
+  --max_train_steps=800 \
   --validation_prompt="$VALIDATION_PROMPT" \
   --validation_epochs=25 \
   --seed="0" \
@@ -34,8 +34,8 @@ accelerate launch train_dreambooth_sd3.py \
   --class_data_dir="$CLASS_DIR" \
   --class_prompt="$CLASS_PROMPT"\
   --num_class_images=200 \
-  --mixed_precision="fp16" \
   --push_to_hub
 
+#  --mixed_precision="fp16" \
 #  --optimizer="AdamW" \
 #  --use_8bit_adam \
